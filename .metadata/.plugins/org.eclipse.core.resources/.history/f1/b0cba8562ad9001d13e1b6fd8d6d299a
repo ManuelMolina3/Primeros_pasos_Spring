@@ -1,0 +1,26 @@
+package com.salesianostriana.dam.demo2;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ServicioAlumnos {
+	@Autowired
+	private ListaAlumnos lista;
+
+	public List <String> cumpleHoy (){
+		List<String> result = new ArrayList <>();
+		result= lista.findAll().stream()
+		.filter(a -> a.getFechaNacimineto().getDayOfMonth()== 
+							LocalDate.now().getDayOfMonth()&&
+							a.getFechaNacimineto().getMonth()== 
+							LocalDate.now().getMonth())
+		.map(a -> a.getNombre()+ " " + a.getApellido())
+		.toList();
+		return result;
+	}
+}

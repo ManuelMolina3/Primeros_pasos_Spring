@@ -1,0 +1,26 @@
+package com.salesianostriana.dam.demo2;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListaAlumnos {
+	
+	private List<Alumno> lista;
+	
+	public void init () {
+		
+		lista =new  ArrayList <>();
+		
+		lista.add(
+				Alumno.builder()
+				.nombre("Paco")
+				.apellido("Medina")
+				.fechaNacimineto(LocalDate.now())
+				.build());
+						
+		
+		
+	}
+
+}

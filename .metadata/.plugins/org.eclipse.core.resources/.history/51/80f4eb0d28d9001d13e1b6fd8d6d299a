@@ -1,0 +1,13 @@
+package com.salesianostriana.dam.demo2;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ServicioAlumnos {
+
+	public List <String> cumpleHoy (){
+		List<String> result = new AarrayList <>();
+		
+		return result;
+	}
+}
